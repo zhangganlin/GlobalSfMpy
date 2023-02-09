@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+scripts/view_reconstruction
+build
+two_views.txt
+covariance_rot.txt
+cameras.txt
+database.db
+images.txt
+points3D.txt
+project.ini

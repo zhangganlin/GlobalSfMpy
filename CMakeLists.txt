@@ -21,10 +21,6 @@ pybind11_add_module(
     ${SRC_GLOBALSFMPY}
 )
 
-add_executable(read_data src/read_data.cpp)
-target_link_libraries(read_data ${THEIA_LIBRARIES} ${OpenCV_LIBS})
-
-
 target_link_libraries(
     GlobalSfMpy PRIVATE 
     ${THEIA_LIBRARIES}

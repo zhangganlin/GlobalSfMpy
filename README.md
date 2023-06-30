@@ -1,5 +1,18 @@
 # GlobalSfMpy
 
+This repo is the implementation of the paper "Revisiting Rotation Averaging: Uncertainties and Robust Losses".
+
+If you find our code or paper useful, please cite
+```bibtex
+@inproceedings{zhang2023revisiting,
+  title={Revisiting Rotation Averaging: Uncertainties and Robust Losses},
+  author={Zhang, Ganlin and Larsson, Viktor and Barath, Daniel},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={17215--17224},
+  year={2023}
+}
+```
+
 ## Tested Environment
 Ubuntu 22.04
 

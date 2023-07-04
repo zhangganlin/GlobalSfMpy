@@ -1,6 +1,6 @@
 # GlobalSfMpy
 
-This repo is the implementation of the paper "Revisiting Rotation Averaging: Uncertainties and Robust Losses".
+This repo is the implementation of the paper "[Revisiting Rotation Averaging: Uncertainties and Robust Losses](https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Revisiting_Rotation_Averaging_Uncertainties_and_Robust_Losses_CVPR_2023_paper.pdf)".
 
 If you find our code or paper useful, please cite
 ```bibtex

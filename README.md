@@ -23,6 +23,67 @@ Ubuntu 22.04
 * OpenCV
 * (Optional) COLMAP (Recommand version 3.6)
 
+### Ceres
+More details can be found on the [Ceres official website](http://ceres-solver.org/installation.html)
+```bash
+# install dependencies of Ceres Solver
+sudo apt-get install cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev
+
+# download and install Ceres Solver
+wget https://github.com/ceres-solver/ceres-solver/archive/refs/tags/1.14.0.tar.gz
+tar zxf 1.14.0.tar.gz
+mkdir ceres-bin
+cd ceres-bin
+cmake ../ceres-solver-1.14.0
+make -j3
+make install
+```
+### TheiaSfM
+More details can be found on the [TheiaSfM official website](http://theia-sfm.org/building.html)
+```bash
+# install dependencies of Theia
+sudo apt-get install libopenimageio-dev librocksdb-dev libatlas-base-dev rapidjson-dev libgtest-dev
+cd thirdparty/TheiaSfM
+mkdir build && cd build
+cmake ..
+make -j4
+sudo make install
+```
+
+### PyBind11
+```bash
+git clone git@github.com:pybind/pybind11.git
+cd pybind11 && mkdir build && cd build
+cmake .. && make -j4
+sudo make install
+```
+
+### OpenCV
+More details can be found on the [OpenCV official website](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+```bash
+# Install minimal prerequisites (Ubuntu 18.04 as reference)
+sudo apt update && sudo apt install -y cmake g++ wget unzip
+# Download and unpack sources
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
+unzip opencv.zip
+unzip opencv_contrib.zip
+# Create build directory and switch into it
+mkdir -p build && cd build
+# Configure
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
+# Build
+cmake --build .
+```
+
+## Install
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+
+
 ## Demo
 ### 1DSfM Madrid_Metropolis
 ```bash
@@ -61,4 +122,7 @@ The reconstruction is stored in ```output``` folder. The format of the result is
 ```bash
 ./view_reconstruction --reconstruction <RESULT_FILE>
 ```
-
+E.g. For ```1DSfM Madrid_Metropolis```
+```bash
+./thirdparty/TheiaSfM/build/bin/view_reconstruction --reconstruction output/Madrid_Metropolis
+```

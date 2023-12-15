@@ -1,0 +1,50 @@
+{
+"priors" : [
+{"CameraIntrinsicsPrior" : {
+"image_name" : "view_4.jpg",
+"width" : 480,
+"height" : 480,
+"camera_intrinsics_type" : "PINHOLE_RADIAL_TANGENTIAL",
+"focal_length" : 300,
+"principal_point" : [240, 240],
+"aspect_ratio" : 1,
+"skew" : 0,
+"radial_distortion_coeffs" : [0.1, 0.1, 0.01, 0],
+"tangential_distortion_coeffs" : [0.05, 0.05],
+"position" : [1, 2, -3],
+"orientation" : [0.1, 0.1, 0.1],
+"latitude" : 128,
+"longitude" : 256,
+"altitude" : 512
+}},
+{"CameraIntrinsicsPrior" : {
+"image_name" : "view_3.jpg",
+"width" : 480,
+"height" : 480,
+"camera_intrinsics_type" : "PINHOLE",
+"principal_point" : [240, 240]
+}},
+{"CameraIntrinsicsPrior" : {
+"image_name" : "view_2.jpg",
+"width" : 480,
+"height" : 480,
+"camera_intrinsics_type" : "PINHOLE",
+"focal_length" : 350,
+"principal_point" : [240, 240],
+"aspect_ratio" : 1.5,
+"skew" : 0.25,
+"radial_distortion_coeffs" : [0.1, 0, 0, 0]
+}},
+{"CameraIntrinsicsPrior" : {
+"image_name" : "view_1.jpg",
+"width" : 480,
+"height" : 480,
+"camera_intrinsics_type" : "PINHOLE",
+"focal_length" : 300,
+"principal_point" : [240, 240],
+"aspect_ratio" : 1,
+"skew" : 0,
+"radial_distortion_coeffs" : [0.1, 0.1, 0, 0]
+}}
+]
+}

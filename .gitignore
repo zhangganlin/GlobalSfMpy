@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
-
+__pycache__
 scripts/view_reconstruction
 build
 two_views.txt

@@ -10,7 +10,6 @@ include_directories(${THEIA_INCLUDE_DIRS})
 include_directories(${GlobalSfMpy_SOURCE_DIR}/include)
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-
 file(GLOB_RECURSE SRC_GLOBALSFMPY
 	"src/*.cpp"
 )

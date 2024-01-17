@@ -126,3 +126,5 @@ E.g. For ```1DSfM Madrid_Metropolis```
 ```bash
 ./thirdparty/TheiaSfM/build/bin/view_reconstruction --reconstruction output/Madrid_Metropolis
 ```
+Example visualization of the output of ```1DSfM Madrid_Metropolis```:
+![demo](https://github.com/zhangganlin/GlobalSfMpy/assets/32034109/750de1f2-36b5-485c-982b-2e06fce6cffb)

@@ -6,9 +6,12 @@ set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fPIC" )
 find_package(Theia REQUIRED)
 find_package(pybind11 REQUIRED)
 find_package( OpenCV REQUIRED )
+find_package(yaml-cpp REQUIRED)
 include_directories(${THEIA_INCLUDE_DIRS})
 include_directories(${GlobalSfMpy_SOURCE_DIR}/include)
 include_directories( ${OpenCV_INCLUDE_DIRS} )
+include_directories( ${yaml-cpp_INCLUDE_DIRS} )
+
 
 file(GLOB_RECURSE SRC_GLOBALSFMPY
 	"src/*.cpp"
@@ -25,4 +28,5 @@ target_link_libraries(
     GlobalSfMpy PRIVATE 
     ${THEIA_LIBRARIES}
     ${OpenCV_LIBS}
+    yaml-cpp
 )

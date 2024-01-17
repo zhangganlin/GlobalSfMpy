@@ -143,7 +143,7 @@ void read_inliners(const std::string &dataset_directory,
              &outlier);
         theia::ViewIdPair id_pair(id1,id2);
         std::pair<int,int> inlier_outlier(inlier,outlier);
-        inliers.insert(std::pair(id_pair,inlier_outlier));
+        inliers.insert(std::make_pair(id_pair,inlier_outlier));
     }
 
 }

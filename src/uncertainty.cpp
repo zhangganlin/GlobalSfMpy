@@ -224,7 +224,7 @@ void read_covariance(const std::string &dataset_directory,
              c01, c11, c12,
              c02, c12, c22;
         Eigen::Vector3d R(r0,r1,r2);
-        covariances.insert(std::pair(id_pair,std::make_pair(C,R)));
+        covariances.insert(std::make_pair(id_pair,std::make_pair(C,R)));
     }
 
 }

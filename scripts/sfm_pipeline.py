@@ -134,7 +134,7 @@ if __name__ == '__main__':
         sfm.CalcCovariance(dataset_path)
     
     loss_func = MAGSACWeightBasedLoss(0.02)
-        
+
     reconstruction = sfm_with_1dsfm_dataset(flagfile,dataset_path,
                                             loss_func,HuberLoss(0.1),
                                             rotation_error_type,position_error_type,
@@ -143,5 +143,6 @@ if __name__ == '__main__':
     if os.path.exists(output_reconstruction):
         os.remove(output_reconstruction)
     sfm.WriteReconstruction(reconstruction, output_reconstruction)
+    sfm.WritePlyFile(output_reconstruction + '.ply', reconstruction, 2)
     
     sfm.StopGlog()

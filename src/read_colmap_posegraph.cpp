@@ -36,13 +36,13 @@ void ColmapViewGraph::read_poses(std::string path){
             name = name.substr(name_start+1,name.size());
         }
         
-        image_names.insert(std::pair(image_id,name));
-        image_ids.insert(std::pair(name,image_id));
+        image_names.insert(std::make_pair(image_id,name));
+        image_ids.insert(std::make_pair(name,image_id));
         double q[4] = {qw,qx,qy,qz};
         double rot[3];
         ceres::QuaternionToAngleAxis(q,rot);
         std::vector<double> pose = {tx,ty,tz,rot[0],rot[1],rot[2]};
-        poses.insert(std::pair(image_id,pose));
+        poses.insert(std::make_pair(image_id,pose));
 
         // std::cout << tx << " " << ty << " " << tz << " " << rot[0] << " " <<
         //           rot[1] << " " << rot[2] << std::endl;

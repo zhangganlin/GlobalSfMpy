@@ -628,6 +628,7 @@ PYBIND11_MODULE(GlobalSfMpy, m) {
     }, py::call_guard<py::gil_scoped_release>());
 
 
+    m.def("WritePlyFile", &WritePlyFile, py::call_guard<py::gil_scoped_release>());
     m.def("WriteReconstruction",&WriteReconstruction, py::call_guard<py::gil_scoped_release>());
     m.def("InitGlog",[](int log_level, bool logtostderr, std::string log_dir){
         FLAGS_logtostderr = logtostderr;

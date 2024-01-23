@@ -42,7 +42,7 @@ make install
 More details can be found on the [TheiaSfM official website](http://theia-sfm.org/building.html)
 ```bash
 # install dependencies of Theia
-sudo apt-get install libopenimageio-dev librocksdb-dev libatlas-base-dev rapidjson-dev libgtest-dev
+sudo apt-get install libopenimageio-dev librocksdb-dev libatlas-base-dev rapidjson-dev libgtest-dev libyaml-cpp-dev
 cd thirdparty/TheiaSfM
 mkdir build && cd build
 cmake ..

@@ -97,18 +97,18 @@ void get_inliners(theia::View& view1, theia::View& view2, theia::TwoViewInfo& ed
     outliners_num =  good_matches.size() - inliners_num;
     
     //-- Draw matches
-    Mat img_matches;
-    drawMatches( input1, keypoints1, input2, keypoints2, inliers, img_matches);
+    // Mat img_matches;
+    // drawMatches( input1, keypoints1, input2, keypoints2, inliers, img_matches);
 
     //-- Show detected matches
     // imshow("Good Matches", img_matches );
     // waitKey();
-    imwrite("/home/zhangganlin/Desktop/CVG/GlobalSfMpy/outlier/colmap/"+view2.Name(),img_matches);
+    // imwrite("/home/zhangganlin/Desktop/CVG/GlobalSfMpy/outlier/colmap/"+view2.Name(),img_matches);
 
-    drawMatches( input1, keypoints1, input2, keypoints2, good_matches, img_matches);
+    // drawMatches( input1, keypoints1, input2, keypoints2, good_matches, img_matches);
     // imshow("Good Matches", img_matches );
     // waitKey();
-    imwrite("/home/zhangganlin/Desktop/CVG/GlobalSfMpy/outlier/colmap/"+view2.Name()+"o.jpg",img_matches);
+    // imwrite("/home/zhangganlin/Desktop/CVG/GlobalSfMpy/outlier/colmap/"+view2.Name()+"o.jpg",img_matches);
 }
 
 void store_inliners(const std::string &dataset_directory, 

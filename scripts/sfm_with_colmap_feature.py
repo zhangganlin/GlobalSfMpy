@@ -16,8 +16,7 @@ log_to_stderr = config['log_to_stderr']
 sfm.InitGlog(glog_verbose,log_to_stderr,glog_directory)
 
 dataset_name = "facade"
-# dataset_path = "../datasets/"+dataset_name
-dataset_path = "/home/zhangganlin/Desktop/CVG/final_version_globalsfmpy/datasets/"+dataset_name
+dataset_path = "../datasets/"+dataset_name
 
 colmap_path = dataset_path+"/colmap/images.txt"
 output_reconstruction = "../output/"+dataset_name

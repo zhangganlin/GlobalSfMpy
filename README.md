@@ -141,6 +141,8 @@ The reconstruction is stored in ```output``` folder. The format of the result is
 ./view_reconstruction --reconstruction <RESULT_FILE>
 ```
 E.g. For ```1DSfM Madrid_Metropolis```
+![demo](https://github.com/zhangganlin/GlobalSfMpy/assets/32034109/a8e58390-2ffe-44b4-94b6-614ef7ec2b7e)
+
 ```bash
 ./thirdparty/TheiaSfM/build/bin/view_reconstruction --reconstruction output/Madrid_Metropolis
 ```

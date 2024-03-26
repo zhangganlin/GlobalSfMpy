@@ -12,23 +12,6 @@ args = parser.parse_args()
 
 dataset_path = args.dataset_path
 
-
-class Pose:
-    def __init__(self,qw,qx,qy,qz,tx,ty,tz):
-        self.qw = qw
-        self.qx = qx
-        self.qy = qy
-        self.qz = qz
-        self.tx = tx
-        self.ty = ty
-        self.tz = tz
-    def rotation_matrix(self):
-        R = Rotation.from_quat([self.qx,self.qy,self.qz,self.qw])
-        return R.as_matrix()
-    def translation(self):
-        return np.array([[self.tx],[self.ty],[self.tz]])
-        
-
 f_camera = open(dataset_path+"/cameras.txt")
 cameras = {}
 lines = f_camera.readlines()
@@ -60,7 +43,7 @@ for i in range(len(lines)):
     tx = np.float64(words[5])
     ty = np.float64(words[6])
     tz = np.float64(words[7])
-    images[image_name]=[camera_id,Pose(qw,qx,qy,qz,tx,ty,tz)]
+    images[image_name]=[camera_id]
 f_images.close()
 
 # Open the database.
@@ -112,8 +95,6 @@ for two_view_geometry in two_view_geometries:
     
     camera1 = cameras[images[image1_name][0]]
     camera2 = cameras[images[image2_name][0]]
-    pose1 = images[image1_name][1]
-    pose2 = images[image2_name][1]
     camera1 = {'model': 'PINHOLE', 'width': camera1[0], 'height': camera1[1], 'params': [camera1[2],camera1[3],camera1[4],camera1[5]]}
     camera2 = {'model': 'PINHOLE', 'width': camera2[0], 'height': camera2[1], 'params': [camera2[2],camera2[3],camera2[4],camera2[5]]}
     

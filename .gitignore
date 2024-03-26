@@ -40,3 +40,9 @@ database.db
 images.txt
 points3D.txt
 project.ini
+view_reconstruction
+log
+colmap
+demo.gif
+output
+*.JPG

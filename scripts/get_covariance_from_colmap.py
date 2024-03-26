@@ -3,10 +3,15 @@ import yaml
 import os
 sys.path.append('../build')
 import GlobalSfMpy as sfm
+import argparse
 
-dataset_name = "facade"
 flagfile = "../flags_1dsfm.yaml"
-dataset_path = "../datasets/"+dataset_name
+parser = argparse.ArgumentParser()
+parser.add_argument("--dataset_path", default="../datasets/facade")
+args = parser.parse_args()
+
+dataset_path = args.dataset_path
+
 
 if os.path.exists(dataset_path+"/covariance_rot.txt"):
     print("Covariance already exists!")

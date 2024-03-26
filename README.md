@@ -90,32 +90,50 @@ make
 cd script
 python sfm_pipeline.py ../flags_1dsfm.yaml
 ```
-### ETH3D facade
-First, use ```COLMAP``` extract the feature points and two-view matches. When extracting the feature, please use the ```PINHOLE``` camera model. Put the COLMAP results inside the ```datasets/facade/colmap``` folder.
-i.e.
+### ETH3D terrace
+First, use ```COLMAP``` extract the feature points and two-view matches. When extracting the feature, please use the ```PINHOLE``` camera model. Here a bash script is provided to run COLMAP for extracting the two-view information:
 
+Download the datasets from [here](https://www.eth3d.net/data/terrace_dslr_undistorted.7z) and put the images inside the ```datasets/terrace/images``` folder, i.e.
+```bash
+.
+└── datasets
+    └── terrace
+        └── images
+            └── *.JPG
+```
+
+First change [the colmap executable path](https://github.com/zhangganlin/GlobalSfMpy/blob/main/scripts/colmapFeatureMatching.sh#L1) in the script, then
+```bash
+cd script
+bash colmapFeatureMatching.sh ../datasets/terrace
+```
+After running COLMAP, the sturcture of the dataset folder should be as following:
 
 ```bash
 .
 └── datasets
-    └── facade
+    └── terrace
         ├── cameras.txt
         ├── colmap
-        │   ├── cameras.txt
-        │   ├── database.db
-        │   ├── images.txt
-        │   ├── points3D.txt
-        │   └── project.ini
+        │   ├── 0
+        │   │   ├── cameras.bin
+        │   │   ├── images.bin
+        │   │   ├── points3D.bin
+        │   │   └── project.ini
+        │   └── database.db
+        ├── covariance_rot.txt
         ├── images
-        │   └── *.JPG
-        └── images.txt
+        │   └── *.JPG
+        ├── images.txt
+        ├── points3D.txt
+        └── two_views.txt
+
 ```
-Then, use GobalSfMpy to reconstruct the scene.
+Then, use GobalSfMpy to reconstruct the scene. The following commands are run inside ```script``` folder.
 ```bash
-cd script
-python read_colmap_database.py --dataset_path ../datasets/facade
-python get_covariance_from_colmap.py
-python sfm_with_colmap_feature.py
+python read_colmap_database.py --dataset_path ../datasets/terrace
+python get_covariance_from_colmap.py --dataset_path ../datasets/terrace
+python sfm_with_colmap_feature.py --dataset_path ../datasets/terrace
 ```
 
 The reconstruction is stored in ```output``` folder. The format of the result is the same as what it is in TheiaSfM. The Theia application ```view_reconstruction``` can be used to visualize the result. 
@@ -128,3 +146,5 @@ E.g. For ```1DSfM Madrid_Metropolis```
 ```
 Example visualization of the output of ```1DSfM Madrid_Metropolis```:
 ![demo](https://github.com/zhangganlin/GlobalSfMpy/assets/32034109/750de1f2-36b5-485c-982b-2e06fce6cffb)
+
+Example visualization of the output of ```ETH3D terrace```

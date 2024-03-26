@@ -91,7 +91,7 @@ cd script
 python sfm_pipeline.py ../flags_1dsfm.yaml
 ```
 ### ETH3D facade
-First, use ```COLMAP``` extract the feature points and two-view matches. Put the COLMAP results inside the ```datasets/facade/colmap``` folder.
+First, use ```COLMAP``` extract the feature points and two-view matches. When extracting the feature, please use the ```PINHOLE``` camera model. Put the COLMAP results inside the ```datasets/facade/colmap``` folder.
 i.e.
 
 
